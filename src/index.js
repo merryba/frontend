@@ -1,13 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
+import Register from './components/Register';
+import Welcome from './components/Welcome';
+import Login from './components/Login';
+import Form from './components/Form';
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router>
+      <div>
+         <Route exact path='/' component={App}/> 
+        <Route exact path='/signup' component={Register}/>
+        <Route exact path='/welcome' component={Welcome}/>
+        <Route exact path='/signin' component={Login}/>
+        <Route exact path='/form' component={Form}/>
+      </div>
+  </Router>,
   document.getElementById('root')
 );
 
